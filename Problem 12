@@ -1,0 +1,26 @@
+Trapping Rain Water
+
+Solution:
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        n=len(height)
+        left,right=[0]*n,[0]*n
+        lmax,rmax=height[0],height[n-1]
+
+        for i in range(n):
+            lmax=max(lmax,height[i])
+            left[i] = lmax
+        
+        for i in range(n-1,-1,-1):
+            rmax=max(rmax,height[i])
+            right[i]=rmax
+
+        ans=0
+        for i in range(1,n-1):
+            ans+=min(left[i],right[i])-height[i]   
+        return ans   
+
+
+
+        
