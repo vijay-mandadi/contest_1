@@ -1,0 +1,13 @@
+Number of 1 Bits
+
+Solution:
+
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        ans=0
+        t=1
+        for i in range(32):
+            if n & t !=0:
+                ans+=1
+            t=t<<1
+        return ans        
