@@ -1,0 +1,15 @@
+Power of Three
+
+Solution:
+
+import math
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n<=0:
+            return False
+        temp = math.log(n,3)
+        temp=round(temp,1)
+        if math.pow(3,temp)==n:
+            return True
+        return False    
